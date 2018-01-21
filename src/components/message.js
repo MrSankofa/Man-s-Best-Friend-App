@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 const Message = (props) => {
   const messageBox = {
@@ -12,9 +12,13 @@ const Message = (props) => {
     picStyle: {
       paddingLeft: 20,
     },
+    thumbnailStyle: {
+      height: 30,
+      width: 30,
+    },
     nameStyle: {
       paddingLeft: 60,
-      marginTop: -15,
+      marginTop: -25,
     },
     messageStyle: {
       paddingLeft: 60,
@@ -22,13 +26,18 @@ const Message = (props) => {
     },
   };
 
-  const { picStyle, nameStyle, messageStyle } = styles;
+  const {
+    picStyle, thumbnailStyle, nameStyle, messageStyle,
+  } = styles;
   const { height } = messageBox;
 
   return (
     <View style={height}>
       <View style={picStyle}>
-        <Text>Pic</Text>
+        <Image
+          style={thumbnailStyle}
+          source={props.thumbnailImage}
+        />
       </View>
       <View style={nameStyle}>
         <Text>{props.name}</Text>
