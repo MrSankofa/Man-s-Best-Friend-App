@@ -1,51 +1,43 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
-class Message extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+const Message = (props) => {
+  const messageBox = {
+    height: {
+      height: 90,
+    },
+  };
 
-  render() {
-    const messageBox = {
-      height: {
-        height: 90,
-      },
-    };
+  const styles = {
+    picStyle: {
+      paddingLeft: 20,
+    },
+    nameStyle: {
+      paddingLeft: 60,
+      marginTop: -15,
+    },
+    messageStyle: {
+      paddingLeft: 60,
+      paddingTop: 3,
+    },
+  };
 
-    const styles = {
-      picStyle: {
-        paddingLeft: 20,
-      },
-      nameStyle: {
-        paddingLeft: 60,
-        marginTop: -15,
-      },
-      messageStyle: {
-        paddingLeft: 60,
-        paddingTop: 3,
-      },
-    };
+  const { picStyle, nameStyle, messageStyle } = styles;
+  const { height } = messageBox;
 
-    const { picStyle, nameStyle, messageStyle } = styles;
-    const { height } = messageBox;
-
-    return (
-      <View style={height}>
-        <View style={picStyle}>
-          <Text>Pic</Text>
-        </View>
-        <View style={nameStyle}>
-          <Text>{this.props.name}</Text>
-        </View>
-        <View style={messageStyle}>
-          <Text>{this.props.message}</Text>
-        </View>
+  return (
+    <View style={height}>
+      <View style={picStyle}>
+        <Text>Pic</Text>
       </View>
-    );
-  }
-}
+      <View style={nameStyle}>
+        <Text>{props.name}</Text>
+      </View>
+      <View style={messageStyle}>
+        <Text>{props.message}</Text>
+      </View>
+    </View>
+  );
+};
 
 export default Message;
