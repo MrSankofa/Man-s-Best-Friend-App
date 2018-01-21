@@ -36,14 +36,13 @@ const Message = (props) => {
     picStyle, thumbnailStyle, nameStyle, messageStyle, heartStyle,
   } = styles;
   const { height } = messageBox;
+  const thumbnail = <Image style={thumbnailStyle} source={props.thumbnailImage} />;
+  const heartOutline = <Icon name="heart-o" size={15} color="grey" />;
 
   return (
     <View style={height}>
       <View style={picStyle}>
-        <Image
-          style={thumbnailStyle}
-          source={props.thumbnailImage}
-        />
+        {thumbnail}
       </View>
       <View style={nameStyle}>
         <Text>{props.name}</Text>
@@ -52,11 +51,7 @@ const Message = (props) => {
         <Text>{props.message}</Text>
       </View>
       <View style={heartStyle}>
-        <Icon
-          name="heart-o"
-          size={15}
-          color="grey"
-        />
+        {heartOutline}
       </View>
     </View>
   );
