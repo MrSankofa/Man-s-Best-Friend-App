@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Message = (props) => {
   const messageBox = {
@@ -24,10 +25,15 @@ const Message = (props) => {
       paddingLeft: 60,
       paddingTop: 3,
     },
+    heartStyle: {
+      alignItems: 'flex-end',
+      paddingRight: 20,
+      marginTop: -15,
+    },
   };
 
   const {
-    picStyle, thumbnailStyle, nameStyle, messageStyle,
+    picStyle, thumbnailStyle, nameStyle, messageStyle, heartStyle,
   } = styles;
   const { height } = messageBox;
 
@@ -44,6 +50,13 @@ const Message = (props) => {
       </View>
       <View style={messageStyle}>
         <Text>{props.message}</Text>
+      </View>
+      <View style={heartStyle}>
+        <Icon
+          name="heart-o"
+          size={15}
+          color="grey"
+        />
       </View>
     </View>
   );
