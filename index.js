@@ -20,6 +20,7 @@ const App = () => {
   const { textStyle, viewStyle } = styles;
   return (
     <View>
+      <View style={{marginTop: 45}}/>
       <Message bgcolor="white" name="David" message="Hey, how are you?" />
       <Message bgcolor={tril} name="Tril" message="I'm fine, how are you man?" />
       <Message bgcolor="white" name="David" message="I've been better" />
